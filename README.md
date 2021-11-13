@@ -13,4 +13,4 @@ This system is capable of monitoring the temperature, humidity and noise levels 
 
 # Phase-1
 1) With the help of DHT-22 temperature and humidity sensor, the system will monitor temperature and humidity continously and display the readings using the LCD screen.
-2) Along with monitoring temperature and humidity continously, it will also be able to detect an earthquake or a fire. When it detect any, it will produce a warning sound using a buzzer.
+2) Along with monitoring temperature and humidity continously, it will also be able to detect an earthquake, a fire or harmful gases like CO, LPG and CH4. When it detects any, it will produce a warning sound using a buzzer and display the message in the LCD screen.
