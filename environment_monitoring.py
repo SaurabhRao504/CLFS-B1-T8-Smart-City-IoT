@@ -13,10 +13,12 @@ DHT_PIN = 4
 vibs_pin = 17
 buzz_pin = 27
 flame_pin = 24
+smoke_pin = 26
 GPIO.setmode(GPIO.BCM)
 GPIO.setup(vibs_pin, GPIO.IN)
 GPIO.setup(buzz_pin, GPIO.OUT, initial=GPIO.LOW)
 GPIO.setup(flame_pin, GPIO.IN)
+GPIO.setup(smoke_pin, GPIO.IN)
 #def callback(vibs_pin):
 
 #GPIO.add_event_detect(vibs_pin, GPIO.BOTH, bouncetime=300) # let us know when the pin goes HIGH or LOW
@@ -46,6 +48,14 @@ while True:
             lcd.cursor_pos=(0, 0)
             lcd.write_string("Fire!")
             print("fire")
+            GPIO.output(buzz_pin, GPIO.HIGH)
+            time.sleep(4)
+            GPIO.output(buzz_pin, GPIO.LOW)
+        elif GPIO.input(smoke_pin):
+            lcd.clear()
+            lcd.cursor_pos=(0, 0)
+            lcd.write_string("Smoke Detected!")
+            print("Smoke Detected")
             GPIO.output(buzz_pin, GPIO.HIGH)
             time.sleep(4)
             GPIO.output(buzz_pin, GPIO.LOW)
